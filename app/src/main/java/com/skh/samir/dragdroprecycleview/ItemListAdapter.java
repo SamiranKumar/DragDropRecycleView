@@ -23,12 +23,12 @@ import java.util.List;
 public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemViewHolder>
         implements InterfaceItem.ItemTouchHelperAdapter {
 
-    private  List<ListItem> mItems = new ArrayList<>();
+    private List<ListItem> mItems = new ArrayList<>();
 
     private final InterfaceItem.OnStartDragListener mDragStartListener;
     private ListItem listItem;
 
-    public ItemListAdapter(Context context, InterfaceItem.OnStartDragListener dragStartListener,List<ListItem> listItem) {
+    public ItemListAdapter(Context context, InterfaceItem.OnStartDragListener dragStartListener, List<ListItem> listItem) {
         mDragStartListener = dragStartListener;
         mItems = listItem;
     }
@@ -44,7 +44,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemVi
     public void onBindViewHolder(final ItemViewHolder holder, int position) {
         ListItem item = mItems.get(position);
 
-        holder.id_tv.setText(item.getId()+"");
+        holder.id_tv.setText(item.getId() + "");
         holder.textView.setText(item.getText());
         holder.imageView.setImageResource(item.getImg());
 
@@ -91,9 +91,9 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemVi
 
         public ItemViewHolder(View itemView) {
             super(itemView);
-            id_tv = (TextView) itemView.findViewById(R.id.id_tv);
-            textView = (TextView) itemView.findViewById(R.id.text_view);
-            imageView = (ImageView) itemView.findViewById(R.id.img_view);
+            id_tv = itemView.findViewById(R.id.id_tv);
+            textView = itemView.findViewById(R.id.text_view);
+            imageView = itemView.findViewById(R.id.img_view);
         }
 
         @Override
@@ -107,7 +107,7 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ItemVi
         }
     }
 
-    public List<ListItem> getAllList(){
+    public List<ListItem> getAllList() {
         return mItems;
     }
 }

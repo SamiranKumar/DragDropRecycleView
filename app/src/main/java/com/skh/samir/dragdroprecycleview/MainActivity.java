@@ -1,6 +1,5 @@
 package com.skh.samir.dragdroprecycleview;
 
-import android.app.LauncherActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -9,14 +8,14 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements InterfaceItem.OnStartDragListener {
 
-    private List<ListItem> data;
+
     private ItemListAdapter adapter;
 
     @Override
@@ -24,12 +23,10 @@ public class MainActivity extends AppCompatActivity implements InterfaceItem.OnS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        List<ListItem> listItems = getdata();
-
 
         adapter = new ItemListAdapter(this, this, getdata());
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycle_view);
+        RecyclerView recyclerView = findViewById(R.id.recycle_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(adapter);
 
@@ -85,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements InterfaceItem.OnS
         if (id == R.id.click) {
             int count = 1;
             for (ListItem i : adapter.getAllList()) {
-                Log.i("SKH",count+"|"+ i.toString());
+                Log.i("SKH", count + "|" + i.toString());
                 count++;
             }
 
