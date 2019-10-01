@@ -1,6 +1,6 @@
 package com.skh.samir.dragdroprecycleview;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.ItemTouchHelper;
 /**
  * Created by samir on 3/20/2017.
  */
@@ -48,7 +48,7 @@ public class InterfaceItem {
 
     /**
      * Interface to notify an item ViewHolder of relevant callbacks from {@link
-     * android.support.v7.widget.helper.ItemTouchHelper.Callback}.
+     * androidx.recyclerview.widget.ItemTouchHelper.Callback}.
      *
      * @author Paul Burke (ipaulpro)
      */
